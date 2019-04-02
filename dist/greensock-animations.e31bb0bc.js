@@ -10997,34 +10997,28 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var _gsap = require("gsap");
 
-var divs = Array.from({
-  length: 100
-}, function () {
-  return document.createElement("div");
-});
-divs.forEach(function (div) {
-  _gsap.TweenMax.set(div, {
-    position: 'absolute',
-    x: "".concat(Math.random() * window.innerWidth, "px"),
-    y: "".concat(Math.random() * window.innerHeight, "px"),
-    width: 20,
-    height: 20,
-    backgroundColor: 'green',
-    border: "3px solid black"
+var box = document.createElement("div");
+box.setAttribute('class', 'box');
+document.body.appendChild(box);
+box.addEventListener('mouseover', function () {
+  _gsap.TweenMax.to(box, 0.25, {
+    className: '+=hover'
   });
-
-  document.body.appendChild(div);
 });
-
-_gsap.TweenMax.to(divs, 10, {
-  x: 100,
-  y: 100
+box.addEventListener('mouseout', function () {
+  _gsap.TweenMax.to(box, 0.25, {
+    className: '-=hover'
+  });
 });
-
-document.addEventListener('click', function (event) {
-  // TweenMax.killTweensOf(event.target)
-  _gsap.TweenMax.killAll(); // TweenMax.killAll(true)
-
+box.addEventListener('mousedown', function () {
+  _gsap.TweenMax.to(box, 0.25, {
+    className: '+=down'
+  });
+});
+box.addEventListener('mouseup', function () {
+  _gsap.TweenMax.to(box, 0.25, {
+    className: '-=down'
+  });
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11054,7 +11048,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52530" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53137" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
