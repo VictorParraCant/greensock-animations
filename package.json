@@ -1,0 +1,17 @@
+{
+  "name": "greensock-animations",
+  "version": "1.0.0",
+  "description": "egghead animations course with greensock",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "main": "index.js",
+  "author": "VictorParraCant",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "gsap": "^2.1.2"
+  }
+}
