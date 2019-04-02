@@ -10997,24 +10997,31 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var _gsap = require("gsap");
 
-_gsap.TweenMax.set('#box', {
-  backgroundColor: 'green',
-  width: '50px',
-  height: '50px',
-  x: '50px',
-  y: '50px'
+var divs = Array.from({
+  length: 100
+}, function () {
+  return document.createElement("div");
 });
+divs.forEach(function (div) {
+  _gsap.TweenMax.set(div, {
+    position: 'absolute',
+    x: "".concat(Math.random() * window.innerWidth, "px"),
+    y: "".concat(Math.random() * window.innerHeight, "px"),
+    width: 20,
+    height: 20,
+    backgroundColor: 'green',
+    border: "3px solid black"
+  });
 
+  document.body.appendChild(div);
+});
 document.addEventListener('click', function (event) {
   var x = event.x,
       y = event.y;
 
-  _gsap.TweenMax.fromTo('#box', 1, {
+  _gsap.TweenMax.to(divs, 1, {
     x: x,
     y: y
-  }, {
-    x: 500,
-    y: 500
   });
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -11045,7 +11052,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61007" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62090" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
