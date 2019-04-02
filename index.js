@@ -18,8 +18,10 @@ divs.forEach(div => {
   document.body.appendChild(div)
 })
 
-document.addEventListener('click', event => {
-  const { x, y } = event
+TweenMax.to(divs, 10, { x: 100 , y: 100 })
 
-  TweenMax.to(divs, 1, { x, y })
+document.addEventListener('click', event => {
+  // TweenMax.killTweensOf(event.target)
+  TweenMax.killAll()
+  // TweenMax.killAll(true)
 })

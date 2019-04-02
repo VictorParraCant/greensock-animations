@@ -11015,14 +11015,16 @@ divs.forEach(function (div) {
 
   document.body.appendChild(div);
 });
-document.addEventListener('click', function (event) {
-  var x = event.x,
-      y = event.y;
 
-  _gsap.TweenMax.to(divs, 1, {
-    x: x,
-    y: y
-  });
+_gsap.TweenMax.to(divs, 10, {
+  x: 100,
+  y: 100
+});
+
+document.addEventListener('click', function (event) {
+  // TweenMax.killTweensOf(event.target)
+  _gsap.TweenMax.killAll(); // TweenMax.killAll(true)
+
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11052,7 +11054,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62090" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52530" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

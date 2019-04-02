@@ -14,3 +14,4 @@ What is GSAP?: [Greensock Docs](https://greensock.com/)
 | Control animation with scroll | Manually Control the Animation with progress in GreenSock.
 | Animate go to point click | Animate From a Variable Point with from and fromTo in GreenSock.
 | Animate an array of divs | Control an Array of Elements with the Same Animation in GreenSock.
+| Stop animations on click | Stop Animations with killTweensOf and killAll in GreenSock.
