@@ -4,18 +4,10 @@ const box = document.createElement("div")
 box.setAttribute('class', 'box')
 document.body.appendChild(box)
 
-box.addEventListener('mouseover', () => {
-  TweenMax.to(box, 0.25, { className: '+=hover'})
-})
+TweenMax.set(box, { transformPerspective: 200 })
 
-box.addEventListener('mouseout', () => {
-  TweenMax.to(box, 0.25, { className: '-=hover'})
-})
-
-box.addEventListener('mousedown', () => {
-  TweenMax.to(box, 0.25, { className: '+=down'})
-})
-
-box.addEventListener('mouseup', () => {
-  TweenMax.to(box, 0.25, { className: '-=down'})
+box.addEventListener('click', () => {
+  TweenMax.to(box, 1, { rotationY: '+=180'})
+  // TweenMax.to(box, 1, { rotationX: '+=180'})
+  // TweenMax.to(box, 1, { rotationZ: '+=180'})
 })

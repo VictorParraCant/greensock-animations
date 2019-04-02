@@ -16,3 +16,4 @@ What is GSAP?: [Greensock Docs](https://greensock.com/)
 | Animate an array of divs | Control an Array of Elements with the Same Animation in GreenSock.
 | Stop animations on click | Stop Animations with killTweensOf and killAll in GreenSock.
 | Animate classes css | Animate Between CSS Classes with GreenSock.
+| 3d Animations | Spint Elements in 3d with Greensock.

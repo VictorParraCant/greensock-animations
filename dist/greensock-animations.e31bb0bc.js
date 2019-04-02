@@ -11000,25 +11000,17 @@ var _gsap = require("gsap");
 var box = document.createElement("div");
 box.setAttribute('class', 'box');
 document.body.appendChild(box);
-box.addEventListener('mouseover', function () {
-  _gsap.TweenMax.to(box, 0.25, {
-    className: '+=hover'
-  });
+
+_gsap.TweenMax.set(box, {
+  transformPerspective: 200
 });
-box.addEventListener('mouseout', function () {
-  _gsap.TweenMax.to(box, 0.25, {
-    className: '-=hover'
-  });
-});
-box.addEventListener('mousedown', function () {
-  _gsap.TweenMax.to(box, 0.25, {
-    className: '+=down'
-  });
-});
-box.addEventListener('mouseup', function () {
-  _gsap.TweenMax.to(box, 0.25, {
-    className: '-=down'
-  });
+
+box.addEventListener('click', function () {
+  _gsap.TweenMax.to(box, 1, {
+    rotationY: '+=180'
+  }); // TweenMax.to(box, 1, { rotationX: '+=180'})
+  // TweenMax.to(box, 1, { rotationZ: '+=180'})
+
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11048,7 +11040,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53137" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54749" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
