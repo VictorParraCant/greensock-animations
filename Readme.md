@@ -18,3 +18,4 @@ What is GSAP?: [Greensock Docs](https://greensock.com/)
 | Animate classes css | Animate Between CSS Classes with GreenSock.
 | 3d Animations | Spint Elements in 3d with Greensock.
 | Multiple 3d Animations | Control the Shared 3d Perspective of Multiple Elements with GreenSock.
+| Scale animation with yoyo| Loop a Tween Forever Using Yoyo and Repeat with GreenSock.

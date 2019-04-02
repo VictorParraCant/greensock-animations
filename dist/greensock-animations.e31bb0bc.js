@@ -10997,37 +10997,13 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var _gsap = require("gsap");
 
-document.addEventListener('mousemove', function (event) {
-  _gsap.TweenMax.set(document.body, {
-    perspective: event.x
-  });
-}); // Array.from({ length: 30 })
-//   .map(() => document.createElement('div'))
-//   .forEach(box => {
-//     box.setAttribute('class', 'box')
-//     document.body.appendChild(box)
-//
-//     TweenMax.set(box, { transformPerspective: 200 })
-//
-//     box.addEventListener('click', () => {
-//       if (!TweenMax.isTweening(box)) {
-//         TweenMax.to(box, 1, { rotationY: '+=180'})
-//       }
-//
-//     })
-//   })
+var item = document.querySelector('#item');
 
-Array.from({
-  length: 30
-}).map(function () {
-  return document.createElement('div');
-}).forEach(function (box) {
-  box.setAttribute('class', 'box');
-  document.body.appendChild(box);
-
-  _gsap.TweenMax.set(box, {
-    rotationY: '30'
-  });
+_gsap.TweenMax.to(item, 0.75, {
+  scale: 1.25,
+  repeat: -1,
+  yoyo: true,
+  ease: _gsap.Elastic.easeInOut
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11057,7 +11033,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56493" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58803" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

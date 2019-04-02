@@ -1,30 +1,10 @@
-import { TweenMax, TimelineMax } from 'gsap'
+import { TweenMax, Elastic } from 'gsap'
 
-document.addEventListener('mousemove', event => {
-  TweenMax.set(document.body, { perspective: event.x })
+const item = document.querySelector('#item')
+
+TweenMax.to(item, 0.75, {
+  scale: 1.25,
+  repeat: -1,
+  yoyo: true,
+  ease: Elastic.easeInOut
 })
-
-// Array.from({ length: 30 })
-//   .map(() => document.createElement('div'))
-//   .forEach(box => {
-//     box.setAttribute('class', 'box')
-//     document.body.appendChild(box)
-//
-//     TweenMax.set(box, { transformPerspective: 200 })
-//
-//     box.addEventListener('click', () => {
-//       if (!TweenMax.isTweening(box)) {
-//         TweenMax.to(box, 1, { rotationY: '+=180'})
-//       }
-//
-//     })
-//   })
-
-Array.from({ length: 30 })
-  .map(() => document.createElement('div'))
-  .forEach(box => {
-    box.setAttribute('class', 'box')
-    document.body.appendChild(box)
-
-    TweenMax.set(box, { rotationY: '30' })
-  })
