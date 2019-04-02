@@ -11005,13 +11005,22 @@ _gsap.TweenMax.set('#box', {
   y: '50px'
 });
 
-document.addEventListener('click', function (event) {
-  var clientX = event.clientX,
-      clientY = event.clientY;
-
-  _gsap.TweenMax.to('#box', .5, {
-    rotation: '+=30'
-  });
+var timeline = new _gsap.TimelineMax();
+timeline.pause();
+timeline.to('#box', 0.5, {
+  x: 100
+});
+timeline.to('#box', 0.5, {
+  y: 100
+});
+timeline.to('#box', 0.5, {
+  x: 50
+});
+timeline.to('#box', 0.5, {
+  y: 50
+});
+document.querySelector('#box').addEventListener('click', function () {
+  timeline.resume();
 });
 },{"gsap":"node_modules/gsap/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11041,7 +11050,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54094" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55049" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
